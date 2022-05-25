@@ -1,0 +1,12 @@
+<h2>Új Kölcsönzés</h2><br><br>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="ugyfel-id">Ügyfél id:</label><br>
+    <input type="text" id="ugyfel-id" placeholder="ugyfel-id" formControlName="id"><br><br>
+
+    <label for="jarmu-id">Jármű id:</label><br>
+    <input type="text" id="jid" placeholder="jarmu-id" formControlName="jid"><br><br>
+    
+    <button type="submit" class="p-3 mb-2 bg-success text-white">Kölcsönzés</button>
+    
+</form>
+
