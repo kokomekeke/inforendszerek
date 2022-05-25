@@ -1,0 +1,25 @@
+<h2>Új ügyfél</h2>
+<br>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="ugyfel-id">Ügyfél id:</label><br>
+    <input type="text" id="ugyfel-id" placeholder="id" formControlName="id"><br><br>
+
+    <label for="ugyfel-nev">Ügyfél név:</label><br>
+    <input type="text" id="ugyfel-nev" placeholder="nev" formControlName="nev"><br><br>
+
+    <label for="ugyfel-cim" >Ügyfél cím:</label><br>
+    <input type="text" id="ugyfel-cim" placeholder="cim" formControlName="cim"><br><br>
+
+    <label for="ugyfel-ig" >Ügyfél igazolványszám:</label><br>
+    <input type="text" id="ugyfel-ig" placeholder="ig" formControlName="ig"><br><br>
+
+    <label for="ugyfel-tel" >Ügyfél telefonszám:</label><br>
+    <input type="text" id="ugyfel-tel" placeholder="tel" formControlName="tel"><br><br>
+
+    
+    <button type="submit" class="p-3 mb-2 bg-success text-white">Upload</button>
+    <button type="button" class="p-3 mb-2 bg-success text-white" (click)="update()">Update</button>
+    
+</form>
+
+

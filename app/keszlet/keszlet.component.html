@@ -1,0 +1,62 @@
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm p-3 mb-2 bg-light text-dark" style="right: 85px;">
+        <h2>Új Készlet</h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <label for="keszlet-gyarto">id:</label><br>
+            <input type="text" id="keszlet-gyarto" placeholder="id" formControlName="id"><br><br>
+        
+            <label for="keszlet-gyarto">Gyártó:</label><br>
+            <input type="text" id="keszlet-gyarto" placeholder="gyarto" formControlName="gyarto"><br><br>
+        
+            <label for="keszlet-rendszam">Rendszám:</label><br>
+            <input type="text" id="keszlet-rendszam" placeholder="rendszam" formControlName="rendszam"><br><br>
+        
+            <label for="keszlet-alvazszam">Alvázszám:</label><br>
+            <input type="text" id="keszlet-alvazszam" placeholder="alvazszam" formControlName="alvazszam"><br><br>
+        
+            <label for="keszlet-beszerz">Beszerzés Dátuma:</label><br>
+            <input type="text" id="keszlet-beszerz" placeholder="datum" formControlName="datum"><br><br>
+        
+            <label for="keszlet-sorszam">Sorszám:</label><br>
+            <input type="text" id="keszlet-sorszam" placeholder="sorszam" formControlName="sorszam"><br><br>
+        
+            <label for="keszlet-dij">Kölcsönzési Díj:</label><br>
+            <input type="text" id="keszlet-dij" placeholder="dij" formControlName="dij"><br><br>
+        
+            <label for="keszlet-km">Futott Km:</label><br>
+            <input type="text" id="keszlet-km" placeholder="km" formControlName="km"><br><br>
+        
+            <label for="keszlet-statusz">Státusz:</label><br>
+            <input type="text" id="keszlet-statusz" placeholder="statusz" formControlName="statusz"><br><br>
+        
+            <label for="ugyfel">Ügyfél Id:</label><br>
+            <input type="number" id="ugyfel" placeholder="ugyfel" formControlName="ugyfel"><br><br>
+        
+            <button type="submit" class="p-3 mb-2 bg-success text-white">Upload</button>
+            <button type="button" class="p-3 mb-2 bg-success text-white" (click)="update()">Update</button>
+        </form>
+      </div>
+      <div class="col-sm p-3 mb-2 bg-secondary text-white" style="right: 85px;">
+        <h2>Készlet listázása:</h2>
+            <div *ngFor="let keszlet of keszlet$ | async">
+                <ul>
+                    <table>
+                        <tr>
+                            <td style="width: 150px;">
+                                <li>készlet id: {{ keszlet.id }}</li>
+                                <li>készlet sorszám: {{ keszlet.sorszam }}</li>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" (click)="delKeszlet(keszlet.id)">Jármű törlése</button>
+                            </td>
+                        </tr>
+                    </table>
+                </ul>
+            </div> 
+      </div>
+    </div>
+  </div>
